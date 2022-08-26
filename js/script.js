@@ -207,3 +207,127 @@ function isBalanced(param) {
 // console.log(isBalanced('foo { bar { baz } boo }'));
 // console.log(isBalanced('foo { bar { baz }'));
 // console.log(isBalanced('foo { bar } }'));
+
+
+// * Слишком длинные слова
+//  *
+//  * Иногда некоторые слова вроде «localization» или «internationalization» настолько длинны,
+//  * что их весьма утомительно писать много раз в каком либо тексте.
+//  *
+//  * Будем считать слово слишком длинным, если его длина строго больше 10 символов.
+//  * Все слишком длинные слова можно заменить специальной аббревиатурой.
+//  *
+//  * Эта аббревиатура строится следующим образом: записывается первая и последняя буква слова,
+//  * а между ними — количество букв между первой и последней буквой (в десятичной системе счисления и без ведущих нулей).
+//  *
+//  * Таком образом, «localization» запишется как «l10n», а «internationalization» как «i18n».
+//  *
+//  * Вам предлагается автоматизировать процесс замены слов на аббревиатуры.
+//  * При этом все слишком длинные слова должны быть заменены аббревиатурой, а слова, не являющиеся слишком длинными,
+//  * должны остаться без изменений.
+//  */
+
+var longWordTests = [
+    {
+        parameters: ["localization"],
+        expectedResult: "l10n"
+    },
+    {
+        parameters: ["internationalization"],
+        expectedResult: "i18n"
+    },
+    {
+        parameters: ["word"],
+        expectedResult: "word"
+    },
+    {
+        parameters: [""],
+        expectedResult: ""
+    },
+    {
+        parameters: ["1"],
+        expectedResult: "1"
+    }
+];
+
+
+function longWord(word) {
+  
+}
+
+
+
+
+
+/**
+ * cAPS lOCK
+ *
+ * зАЧЕМ НУЖНА КЛАВИША cAPS lOCK?
+ * Caps Lock — клавиша компьютерной клавиатуры, предназначенная для автоматической (постоянной) смены регистра
+ * букв со строчных на прописные. Будучи случайно нажатой, она приводит к последствиям вроде первого абзаца в
+ * условии этой задачи.
+ *
+ * Будем считать, что слово набрано с ошибочно нажатой клавишей Caps Lock, если:
+ * - либо оно полностью состоит из прописных букв;
+ * - либо прописными являются все его буквы, кроме первой.
+ *
+ * В таком случае, нужно автоматически поменять регистр всех букв на противоположный. Например,
+ * регистр букв слов «hELLO», «HTTP», «z» должен быть изменен.
+ * Напишите программу, которая применяет описанное выше правило или оставляет слово без изменения, если оно не применимо.
+ *
+ * Входные данные
+ * записано слово, состоящее из прописных или строчных букв латинского алфавита. Длина слова — от 1 до 100 символов включительно.
+ *
+ * Выходные данные
+ * Выведите результат обработки данного слова.
+ */
+
+// var capsLockTests = [
+//     {
+//         parameters: ["cAPS"],
+//         expectedResult: "Caps"
+//     },
+//     {
+//         parameters: ["Lock"],
+//         expectedResult: "Lock"
+//     },
+//     {
+//         parameters: ["wHY DO wE NEED cAPS lOCK?"],
+//         expectedResult: "Why do We need Caps Lock?"
+//     },
+//     {
+//         parameters: ["FuNkY iS nOt CaPs!"],
+//         expectedResult: "FuNkY Is nOt CaPs!"
+//     }
+// ];
+
+
+// function capsLock(str) {
+//     return str
+//         .split(' ')
+//         .map(function (word) {
+//             let upWord = word.toUpperCase()
+
+//             if (word === upWord) {
+//                 return word.toLowerCase()
+//             } else if (word === upWord[0].toLowerCase() + upWord.slice(1)) {
+//                 return word[0].toUpperCase() + word.slice(1).toLowerCase()
+//             }
+//             return word
+//         })
+//         .join(' ')
+// }
+
+// capsLockTests.forEach(function (element) {
+//     let workingItem = element.parameters[0]
+//     let expectedItem = element.expectedResult
+
+//     let result = capsLock(workingItem)
+
+//     console.log({
+//         initialData: workingItem,
+//         result,
+//         expectedItem,
+//         isCorrect: result === expectedItem
+//     })
+// })
